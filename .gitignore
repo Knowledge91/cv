@@ -24,3 +24,5 @@
 *.el
 *.fls
 *.fdb_latexmk
+_region_.*
+*.tex#
