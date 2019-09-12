@@ -1,0 +1,71 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}	%special characters
+\usepackage[utf8]{inputenc}	%special characters
+\usepackage{lmodern,textcomp}% Euro Symbol
+
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry} %article layout margins
+\usepackage{tabularx}		%tabulars width fixed textwidth
+\usepackage{multicol}	%2 columns in Skills
+\usepackage{graphicx}
+\usepackage{sectsty}
+\sectionfont{
+	\sectionrule{0pt}{0pt}{-5pt}{0.8pt}
+}
+
+\begin{document}
+
+\Large
+\noindent
+\textbf{Dirk Hornung, Ph.D.} \\
+
+\normalsize
+\noindent
+\begin{minipage}{0.5\linewidth}
+  \begin{tabularx}{0.6\textwidth}{>{\bfseries}l l}
+    City:           & Barcelona \\
+    Date of birth:  & October 5, 1991\\
+    Place of birth: & Fulda, Germany \\
+    Mobile:         & +34 695460404 \\
+    E-mail:         & hello@drdirk.io \\
+    Website:      	& drdirk.io
+  \end{tabularx}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+  \begin{flushright}
+    \includegraphics[width=0.4\textwidth]{dirk.png}
+  \end{flushright}
+\end{minipage}
+
+ \section*{}
+ \vspace{1cm}
+ Dear Deutsche Telekom, \\
+
+ \noindent I am Dirk Hornung, a recently graduated Ph.D. student at the institute
+ of high energy physics of the Autonomous University of Barcelona with 5+ years
+ of experience in leading the technology in different Startups. Within my
+ studies, I researched low-energy QCD and the determination of Standard Model
+ parameters. I developed a C++ fitting routine to extract parameters of
+ theoretical models out of CERN experimental data. \\
+
+ \noindent Besides my studies, I am an entrepreneur. During the last year, I
+ developed Smart Contracts in the Ethereum Blockchain and connected them through
+ REST APIs using Node Express for a legaltech. Before I developed a chatbot using
+ Artificial Intelligence for a fintech. We connected our clients through
+ Messenger to their bank accounts and analyzed their banking information using
+ Python. I am furthermore a Full-stack developer with lots of experience
+ developing
+ applications using React as frontend and AWS services as a backend.  \\
+
+ \noindent Currently I am educating myself on the topic of Artificial Intelligence
+ and Machine Learning, especially in the field of Deep Learning. I recently completed
+ Andrew Ng's Coursera Deep Learning Specialization. Apart from that, I am practising my
+ Tensorflow and Keras skills within python sound wave simulations and active noise cancelling.\\
+
+ \noindent Sincerely, \\
+ Dr. Dirk Hornung \\
+
+ \noindent P.S. I am a native German, but also fluent in English, French and
+ Spanish. Visit drdirk.io to get to know me better.
+
+ \end{document}
