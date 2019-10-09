@@ -1,40 +1,204 @@
 \documentclass[11pt]{article}
-\usepackage[T1]{fontenc}	%special characters
-\usepackage[utf8]{inputenc}	%special characters
+\usepackage{fontspec}
+% \usepackage[T1]{fontenc}	%special characters
+% \usepackage[utf8]{inputenc}	%special characters
 \usepackage{lmodern,textcomp}% Euro Symbol
-
+\usepackage[a4paper, top=0.5in, right=0.5in, bottom=0.5in, left=0.5in]{geometry} %article layout margins
 \usepackage{hyperref}
-\usepackage[margin=1in]{geometry} %article layout margins
 \usepackage{tabularx}		%tabulars width fixed textwidth
 \usepackage{multicol}	%2 columns in Skills
 \usepackage{graphicx}
-\usepackage{sectsty}
-\sectionfont{
-	\sectionrule{0pt}{0pt}{-5pt}{0.8pt}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,calc}
+\usepackage{xcolor}
+
+\setlength\parindent{0pt}
+\renewcommand\tabularxcolumn[1]{m{#1}}% for vertical centering text in X column
+
+\definecolor{lightgray}{rgb}{239,239,239}
+% \definecolor{maincolor}{RGB}{0,180,230}
+\definecolor{maincolor}{RGB}{0,112,243}
+
+\newcommand\score[2]{
+\pgfmathsetmacro\pgfxa{#1+1}
+\tikzstyle{scorestars}=[circle, inner sep=0.2em,anchor=west]
+\begin{tikzpicture}[baseline]
+  \foreach \i in {1,...,#2} {
+    \pgfmathparse{(\i<=#1?"maincolor":"lightgray")}
+    \edef\starcolor{\pgfmathresult}
+    \draw (\i*1.5em,0.25em) node[name=star\i,scorestars,fill=\starcolor]  {};
+   }
+  \pgfmathparse{(#1>int(#1)?int(#1+1):0}
+  \let\partstar=\pgfmathresult
+  \ifnum\partstar>0
+    \pgfmathsetmacro\starpart{#1-(int(#1))}
+    \path [clip] (star\partstar.north west) rectangle 
+    ($(star\partstar.south west)!\starpart!(star\partstar.south east)$);
+    \fill (\partstar*1em,0) node[scorestars,fill=blue!70]  {};
+  \fi,
+
+\end{tikzpicture}
 }
+\newcommand\skill[1]{
+ \begin{tikzpicture}
+   \fill [white] (0,0) rectangle (\linewidth,.2);
+   \fill [maincolor] (0,0) rectangle (#1 \linewidth,.2);
+ \end{tikzpicture} 
+}
+\newfontfamily\unicodefont{Lucida Grande}
+\setmainfont{HK Grotesk}
+\pagenumbering{gobble}
+
+
 
 \begin{document}
 
-\Large
-\noindent
-\textbf{Dirk Hornung, Ph.D.} \\
+\begin{minipage}[t]{0.25\textwidth}
+\section*{Dirk Hornung, PhD}
 
-\normalsize
-\noindent
-\begin{minipage}{0.5\linewidth}
-  \begin{tabularx}{0.6\textwidth}{>{\bfseries}l l}
-    City:           & Barcelona \\
-    Date of birth:  & October 5, 1991\\
-    Place of birth: & Fulda, Germany \\
-    Mobile:         & +34 695460404 \\
-    E-mail:         & hello@drdirk.io \\
-    Website:      	& drdirk.io
-  \end{tabularx}
+\vspace{0.8cm}
+
+\includegraphics[width=\linewidth]{dirkRound.png}
+
+\vspace{1.1cm}
+
+\begin{footnotesize}
+\begin{tabularx}{\linewidth}{@{}>{\bfseries}ll@{}}
+City:       & Barcelona \\
+Birthdate:  & October 5, 1991\\
+Birthplace: & Fulda, Germany \\
+Mobile:     & +34 695460404 \\
+E-mail:     & hello@drdirk.io \\
+Website:    & https://drdirk.io
+\end{tabularx}
+\end{footnotesize}
+
+\vspace{0.5cm}
+
+\small
+\subsection*{Languages}
+\begin{tabularx}{\linewidth}{@{}Xc @{}}
+German & \score{5}{5} \\
+English & \score{4}{5} \\
+French & \score{3}{5} \\
+Spanish & \score{4}{5} 
+\end{tabularx}
+
+\vspace{0.7cm}
+
+\subsection*{Skills}
+
+\begin{tabularx}{\linewidth}{@{}lX @{}}
+  Data Science & \skill{0.6} \\
+  Frontend & \skill{.9} \\
+  Backend & \skill{.8} \\
+  Blockchain & \skill{.4} \\ 
+  Prototyping & \skill{.2}
+\end{tabularx}
+
+\vspace{1.5cm}
+
+\footnotesize
+\textbf{Data Science}\\
+Python, Tensorflow, Keras, Hadoop, Spark,
+Pandas, Numpy, Matplotlib, Deep Learning \\
+\textbf{Frontend}\\
+JavaScript, TypeScript, React, Angular, React Native, Redux,
+Flutter, CSS, HTML \\
+\textbf{Backend}\\
+AWS, NodeJS, Express, MySQL, PostgreSQL, MongoDB, DynamoDB,
+Serverless, Flask \\
+\textbf{Blockchain}\\
+Ethereum, Solidity, Smart
+Contracts, Token Economy, Decentralised Identity, ICO \\
+\textbf{Prototyping} \\
+Arduino, C++, Fusion 360, 3D-Printing, CNC, Electronics
+
 \end{minipage}
-\begin{minipage}{0.5\linewidth}
-  \begin{flushright}
-    \includegraphics[width=0.4\textwidth]{dirk.png}
-  \end{flushright}
+\hspace{0.05\textwidth}
+\begin{minipage}[t]{0.65\textwidth}
+
+
+\section*{Professional Experience}
+\begin{tabularx}{\textwidth}{lX}
+  05/18 - 02/19 & \textbf{CYSAE} - Legaltech Startup\\
+                & \textit{CTO} (2 Developers) \\
+                & \small \textbf{Utility Token for Cuatre Casas} \\
+                & \small Created an Utility Token, within the Ethereum Blockchain, that allows to buy legal services by
+                  paying with a Cryptocurrency. \\
+                  % & Customised an ERC-20 Solidity Smart Contract for
+                  %   a Spanish lawyer agency. Configured and launched an
+                  %   Ethereum Node connected to a Node-Express REST API to consume
+                  %   the token functionality. \\[1.5mm]
+                & \small \textbf{Stamper} \\
+                & \small Created a web application that anchors documents in the Ethereum
+                  Blockchain, to establish secure contracts.\\
+                  % Developed a React-Redux Web App with an
+                  % GraphQL-Prisma-MySQL backend hosted on AWS-ERC docker
+                  % containers and AWS-S3. \\[1.5mm]
+                & \small \textbf{Boardchain} \\
+                & \small Developped a web application to remotly hold decentralised
+                  board meetings. \\\\
+                  % & Developed a DAO to decentralise board meetings. The
+                  %   Web App was based on React-Redux backed by
+                  %   Serverless AWS-Lambda, AWS-S3, AWS-Cognito and AWS-Dynamodb. \\\\
+  10/17 - 04/18 & \textbf{Alda} - Fintech Startup\\
+                & \textit{CTO \& Co-Founder} (1 Developer) \\
+                & \small \textbf{Alda Chatbot} \\
+                & \small Created a Fintech Chatbot that serves as a personal financial
+                  advisor.\\
+                  % & Created a Fintech Chatbot Modelled and
+                  % trained a RNN before switching to the Dialogflow API
+                  % for the NLP. Created a Serverless Python-Flask-AWS-RDS (PostgreSQL) backend,
+                  % combining the Facebook and Saltedge API to connect
+                  % and query financial information of our clients. \\[1.5mm]
+                & \small \textbf{Chatbot UI} \\
+                & \small Created a mobile app for the Chatbot, which has been
+                  integrated in serveral companies.
+                  % & Created React-Redux PWA connected to our chatbot.
+                  % Integrated the app in various Wordpress and Liferay
+                  % installations. \\\\
+\end{tabularx}
+
+\vspace{0.3cm}
+
+\section*{Education}
+\begin{small}
+\begin{tabularx}{\textwidth}{lX}
+  % 2019        & \textbf{Deep Learning Specialisation} \\
+  %             & Absolved five classes of the Coursera specialisation of Deep Learning to study Neural Networks,
+  %               Hyperparameter tuning, Machine Learning projects, Convolutional Neural Networks and Sequence Models. \\\\
+  10/15 - 07/19 & \textbf{Ph.D., Theoretical Physics}, UAB (Spain) / AMU (France) \\
+                & Thesis: The QCD Strong Coupling from Hadronic Tau
+                  Decays \\\\
+  10/14 - 09/15 & \textbf{M.Sc., Particle Physics}, UAB (Spain) \\
+                & Thesis: 1-Loop Anomalous Dimensions of 4-Quark
+                  Operators \\\\
+  10/11 - 09/14 & \textbf{B.Sc., Condensed Matter Physics}, GU (Germany) \\
+                & Thesis: Band Structure Studies of Graphene and Modified
+                  Graphene Structure
+\end{tabularx}
+
+\vspace{0.3cm}
+
+\section*{Awards}
+\begin{itemize}
+\item \textbf{Imagine Silicon Valley Finalist}. \\
+One of ten finalists of more than 500 applicants to be sponsored for a Silicon Valley trip.
+\item \textbf{Winner: Imagine Developer Dreamer}. \\
+ Got selected to participate in the "Imagine-Express-Train".
+\item \textbf{Best Fintech Pitch} \\
+Awarded 1st price at Fintech Stage's event ``Fintech War'' of over
++16 fintech startups plus a 1k€ cash price
+\item \textbf{Winner Adidas Finals Hackathon} \\
+Created the ``Adidasum'' ICO for an API data marketplace.
+\item \textbf{MetLife Iberia Financial Inclusion Award} \\
+Awarded a 4K€ cash price at MetLife Iberia to keep
+promoting Financial Inclusion.
+\item \textbf{Winner Adidas Hackathon Barcelona} \\
+Created surveillance system to track and identify customer satisfaction.
+\end{itemize}
+\end{small}
 \end{minipage}
 	
 % \section*{Professional Profile}
@@ -46,175 +210,153 @@
 
 
 % COVERLETTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \section*{}
- \vspace{1cm}
- Dear Senacor, \\
+ % \section*{}
+ % \vspace{1cm}
+ % Dear , \\
  
 
- \noindent I am Dirk Hornung, a recently graduated Ph.D. student at
- the institute of high energy physics of the Autonomous University of
- Barcelona with 5+ years of experience in leading the technology in
- different Startups. Within my studies, I researched low-energy QCD
- and the determination of Standard Model parameters. I developed a C++
- fitting routine to extract parameters of
- theoretical models out of CERN experimental data. \\
+ % \noindent I am Dirk Hornung, a recently graduated Ph.D. student at
+ % the institute of high energy physics of the Autonomous University of
+ % Barcelona with 5+ years of experience in leading the technology in
+ % different Startups. Within my studies, I researched low-energy QCD
+ % and the determination of Standard Model parameters. I developed a C++
+ % fitting routine to extract parameters of
+ % theoretical models out of CERN experimental data. \\
 
- \noindent Besides my studies, I am an entrepreneur. During the last year, I
- developed Smart Contracts in the Ethereum Blockchain and connected them through
- REST APIs using Node Express for a legaltech. Before I developed a chatbot
- using Artificial Intelligence for a fintech. We connected our clients through
- Messenger to their bank accounts and analyzed their banking information using
- Python. I am furthermore a Full-stack developer with lots of experience
- developing applications using React as frontend and AWS services as a backend.  \\
+ % \noindent Besides my studies, I am an entrepreneur. During the last year, I
+ % developed Smart Contracts in the Ethereum Blockchain and connected them through
+ % REST APIs using Node Express for a legaltech. Before I developed a chatbot
+ % using Artificial Intelligence for a fintech. We connected our clients through
+ % Messenger to their bank accounts and analyzed their banking information using
+ % Python. I am furthermore a Full-stack developer with lots of experience
+ % developing applications using React as frontend and AWS services as a backend.  \\
 
- \noindent Currently I am educating myself on the topic of Artificial Intelligence
- and Machine Learning, especially in the field of Deep Learning. I recently completed
- Andrew Ng's Coursera Deep Learning Specialization. Apart from that, I am practising my
- Tensorflow and Keras skills within python sound wave simulations and active noise cancelling.\\
+ % \noindent Currently I am educating myself on the topic of Artificial Intelligence
+ % and Machine Learning, especially in the field of Deep Learning. I recently completed
+ % Andrew Ng's Coursera Deep Learning Specialization. Apart from that, I am practising my
+ % Tensorflow and Keras skills within python sound wave simulations and active noise cancelling.\\
 
 
- \noindent Sincerely, \\
- Dr. Dirk Hornung \\
+ % \noindent Sincerely, \\
+ % Dr. Dirk Hornung \\
 
- \noindent P.S. I love Tech and would be interested in a position as Technology Consultant.
+ % \noindent P.S. I love Tech and would be interested in a position as Technology Consultant.
  % \noindent P.S. I am a native German, but also fluent in English, French and
  % Spanish. Visit drdirk.io to get to know me better.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\section*{Professional Experience}
-\begin{tabularx}{\textwidth}{lX}
-  % since July 2019        & \textbf{Sharify} \\
-  %                        & \textbf{CTO \& Backend Developer} \\[2mm]
-  %                        & Scaling the backend of Sharify, a Startup connecting thousands of
-  %                        users on a live map. Architecting NoSQL databases and Node Microservices.\\\\
-  May 2018 - Feb. 2019   & \textbf{CYSAE} \\
-                         & \textit{CTO} (2 Developers) \\[2mm]
-                         & \textbf{Utility Token for Cuatre Casas} \\
-                         & Customised an ERC-20 Solidity Smart Contract for
-                           a Spanish lawyer agency. Configured and launched an
-                           Ethereum Node connected to a Node-Express REST API to consume
-                           the token functionality. \\[1.5mm]
-                         & \textbf{Stamper} \\
-                         & Developed a React-Redux Web App with an
-                           GraphQL-Prisma-MySQL backend hosted on AWS-ERC docker
-                           containers and AWS-S3. \\[1.5mm]
-                         & \textbf{Boardchain} \\
-                         & Developed a DAO to decentralise board meetings. The
-                           Web App was based on React-Redux backed by
-                           Serverless AWS-Lambda, AWS-S3, AWS-Cognito and AWS-Dynamodb. \\\\
-  Oct. 2017 - Apr. 2018  & \textbf{Alda} \\
-                         & \textit{CTO \& Co-Founder} (1 Developer) \\[2mm]
-                         & \textbf{Alda Chatbot} \\
-                         & Created a Messenger Fintech Chatbot. Modelled and
-                           trained a RNN before switching to the Dialogflow API
-                           for the NLP. Created a Serverless Python-Flask-AWS-RDS (PostgreSQL) backend,
-                           combining the Facebook and Saltedge API to connect
-                           and query financial information of our clients. \\[1.5mm]
-                         & \textbf{Chatbot UI} \\
-                         & Created React-Redux PWA connected to our chatbot.
-                           Integrated the app in various Wordpress and Liferay
-                           installations. \\\\
-%  Feb. 2017 - Sept. 2017 & \textbf{WeGoLoco} \\
-%                         & \textit{CTO \& Co-Founder} \\[1mm]
-%                         & Created a native iOS app based on Swift. \\
+% \section*{Professional Experience}
+% \begin{tabularx}{\textwidth}{lX}
+%   % since July 2019        & \textbf{Sharify} \\
+%   %                        & \textbf{CTO \& Backend Developer} \\[2mm]
+%   %                        & Scaling the backend of Sharify, a Startup connecting thousands of
+%   %                        users on a live map. Architecting NoSQL databases and Node Microservices.\\\\
+%   05/2018 - 02/2019   & \textbf{CYSAE} \\
+%                          & \textit{CTO} (2 Developers) \\[2mm]
+%                          & \textbf{Utility Token for Cuatre Casas} \\
+%                          & Customised an ERC-20 Solidity Smart Contract for
+%                            a Spanish lawyer agency. Configured and launched an
+%                            Ethereum Node connected to a Node-Express REST API to consume
+%                            the token functionality. \\[1.5mm]
+%                          & \textbf{Stamper} \\
+%                          & Developed a React-Redux Web App with an
+%                            GraphQL-Prisma-MySQL backend hosted on AWS-ERC docker
+%                            containers and AWS-S3. \\[1.5mm]
+%                          & \textbf{Boardchain} \\
+%                          & Developed a DAO to decentralise board meetings. The
+%                            Web App was based on React-Redux backed by
+%                            Serverless AWS-Lambda, AWS-S3, AWS-Cognito and AWS-Dynamodb. \\\\
+%   10/2017 - 04/2018  & \textbf{Alda} \\
+%                          & \textit{CTO \& Co-Founder} (1 Developer) \\[2mm]
+%                          & \textbf{Alda Chatbot} \\
+%                          & Created a Messenger Fintech Chatbot. Modelled and
+%                            trained a RNN before switching to the Dialogflow API
+%                            for the NLP. Created a Serverless Python-Flask-AWS-RDS (PostgreSQL) backend,
+%                            combining the Facebook and Saltedge API to connect
+%                            and query financial information of our clients. \\[1.5mm]
+%                          & \textbf{Chatbot UI} \\
+%                          & Created React-Redux PWA connected to our chatbot.
+%                            Integrated the app in various Wordpress and Liferay
+%                            installations. \\\\
+% %  Feb. 2017 - Sept. 2017 & \textbf{WeGoLoco} \\
+% %                         & \textit{CTO \& Co-Founder} \\[1mm]
+% %                         & Created a native iOS app based on Swift. \\
 
-  %                          2017 & \textbf{FuldaCity} \\
-  %                          & \textit{CTO \& Co-Founder} \\[1mm]
-  %                          & Bringing my Hometown online within the
-  %                          Meteor/React Framework \\[1mm]
-  %                          & http://www.fuldacity.de/ \\\\
+%   %                          2017 & \textbf{FuldaCity} \\
+%   %                          & \textit{CTO \& Co-Founder} \\[1mm]
+%   %                          & Bringing my Hometown online within the
+%   %                          Meteor/React Framework \\[1mm]
+%   %                          & http://www.fuldacity.de/ \\\\
   
-  %              %                          \pagebreak
+%   %              %                          \pagebreak
   
   
   
-  %                          2013 - 2016 & \textbf{Fulda Strategy Group GbR -
-  %                          Management Consultancy} \\
-  %                          & \textit{Founder and Managing Director} \\[1mm]
-  %                          & Projects in the area of ERP selection and
-  %                          implementation, process management and software
-  %                          development \\[1mm]
-  %                          & www.fulda-strategy.com \\\\
+%   %                          2013 - 2016 & \textbf{Fulda Strategy Group GbR -
+%   %                          Management Consultancy} \\
+%   %                          & \textit{Founder and Managing Director} \\[1mm]
+%   %                          & Projects in the area of ERP selection and
+%   %                          implementation, process management and software
+%   %                          development \\[1mm]
+%   %                          & www.fulda-strategy.com \\\\
   
-  %                          2010 - present & \textbf{Eevents Fulda GbR -
-  %                          Event Management} \\
-  %                          & \textit{Founder} \\[1mm]
-  %                          & Organising of company events, weddings and
-  %                          birthdays \\[1mm]
-  %                          & www.eevents-fulda.de \\\\
+%   %                          2010 - present & \textbf{Eevents Fulda GbR -
+%   %                          Event Management} \\
+%   %                          & \textit{Founder} \\[1mm]
+%   %                          & Organising of company events, weddings and
+%   %                          birthdays \\[1mm]
+%   %                          & www.eevents-fulda.de \\\\
   
-  %                          2010 - 2014 & \textbf{Hornung Webdesign -
-  %                          Webdesign Agency} \\
-  %                          & \textit{Founder} \\[1mm]
-  %                          & Developing and maintaining of CMS and SaaS.
-  %                          \\\\
-\end{tabularx}
+%   %                          2010 - 2014 & \textbf{Hornung Webdesign -
+%   %                          Webdesign Agency} \\
+%   %                          & \textit{Founder} \\[1mm]
+%   %                          & Developing and maintaining of CMS and SaaS.
+%   %                          \\\\
+% \end{tabularx}
 
 
-\section*{Education}
-\begin{tabularx}{\textwidth}{lX}
-  2019         & \textbf{Deep Learning Specialisation} \\
-               & Absolved five classes of the Coursera specialisation of Deep Learning to study Neural Networks,
-                 Hyperparameter tuning, Machine Learning projects, Convolutional Neural Networks and Sequence Models. \\\\
-  2015 - 2019  & \textbf{Ph.D., Theoretical Physics}, Autonomous University of
-                 Barcelona (Spain) / Aix-Marseille University (France) \\
-               & Thesis: The QCD Strong Coupling from Hadronic Tau
-                 Decays \\
-               & Supervisor: Dr. Matthias Jamin \\
-               & Created a numerical chi-squared fitting routine, written in
-                 C++ using the frameworks BOOST and ROOT. \\\\
-  2014 - 2015  & \textbf{M.Sc., Particle Physics}, Autonomous University of
-                                Barcelona (Spain) \\
-               & Thesis: 1-Loop Anomalous Dimensions of 4-Quark
-                 Operators \\
-               & Supervisor: Dr. Matthias Jamin \\\\
-  2011 - 2014  & \textbf{B.Sc., Condensed Matter Physics}, Goethe University Frankfurt (Germany) \\
-               & Thesis: Band Structure Studies of Graphene and Modified
-                 Graphene Structure \\
-               & Supervisor: Prof. Dr. Roser Valentí
-\end{tabularx}
 		
-\section*{Skills}
-\begin{tabularx}{\textwidth}{lX}
-  \textbf{Data Science} & Python, Tensorflow, Keras, Hadoop,
-                          Spark, Pandas, Numpy, Matplotlib, SVM,
-                          NN, CNN, RNN
-                          Mathematica \\
-  \textbf{Frontend}     & JavaScript, React, React Native, Redux, Flutter, CSS, HTML  \\
-  \textbf{Backend}      & AWS, Node, Express, MySQL, PostgreSQL, DynamoDB,
-                          Serverless, Flask, Zappa, Django \\
-  \textbf{Blockchain}   & Ethereum, Solidity, Smart Contracts,
-                          Tokens economy,
-                          Decentralised Identity, ICOs \\
-  \textbf{Prototyping}  & Arduino, C++, Fusion 360, 3D-Printing,
-                          CNC, Electronics \\
-  \textbf{Marketing}    & Photoshop, Illustrator, Final Cut Pro, SEO, SEM, Wordpress, PHP \\
-  \textbf{Soft}         & Leadership, Public Speaking, Motivating, Mentoring, Confidence, Energy
-\end{tabularx}
+% \section*{Skills}
+% \begin{tabularx}{\textwidth}{lX}
+%   \textbf{Data Science} & Python, Tensorflow, Keras, Hadoop,
+%                           Spark, Pandas, Numpy, Matplotlib, SVM,
+%                           NN, CNN, RNN
+%                           Mathematica \\
+%   \textbf{Frontend}     & JavaScript, React, React Native, Redux, Flutter, CSS, HTML  \\
+%   \textbf{Backend}      & AWS, Node, Express, MySQL, PostgreSQL, DynamoDB,
+%                           Serverless, Flask, Zappa, Django \\
+%   \textbf{Blockchain}   & Ethereum, Solidity, Smart Contracts,
+%                           Tokens economy,
+%                           Decentralised Identity, ICOs \\
+%   \textbf{Prototyping}  & Arduino, C++, Fusion 360, 3D-Printing,
+%                           CNC, Electronics \\
+%   \textbf{Marketing}    & Photoshop, Illustrator, Final Cut Pro, SEO, SEM, Wordpress, PHP \\
+%   \textbf{Soft}         & Leadership, Public Speaking, Motivating, Mentoring, Confidence, Energy
+% \end{tabularx}
 
-\section*{Awards}
-\begin{tabularx}{\textwidth}{lX}
-  June 2019      & \textbf{Imagine Silicon Valley Finalist}. \\
-                 &  One of ten finalists of more than 500 applicants who sent in a one minute
-                   video (https://www.youtube.com/watch?v=Om1DGAa7Cgw) to be sponsored for a Silicon Valley trip. \\\\
-  February 2018  & \textbf{Winner: Imagine Developer Dreamer}. \\
-                 &  Got selected to participate in the "Imagine-Express-Train". \\\\
-  September 2018 & \textbf{Best Fintech Pitch} \\
-                 & Awarded 1st price at Fintech Stage's event ``Fintech War'' of over
-                   +16 fintech startups plus a 1k€ cash price \\\\
-  July 2018      & \textbf{Winner Adidas Finals Herzogen-Aurach} \\
-                 &  Created the ``Adidasum'' ICO for an API data marketplace to
-                   democratise data and connect data provider, data scientists and
-                   data consumer.\\\\
-  May 2018       & \textbf{MetLife Iberia Financial Inclusion Award} \\
-                 & Awarded a 4K€ cash price at MetLife Iberia to keep
-                   promoting Financial Inclusion. \\\\
-  April 2018     & \textbf{Winner Adidas Hackathon Barcelona} \\
-                 & Created a system that could uniquely identify faces and track
-                   emotions. We trained a model to predict the probability of a
-                   client purchasing a certain item in an Adidas store.
-\end{tabularx}
+% \section*{Awards}
+% \begin{tabularx}{\textwidth}{lX}
+%   07/2019      & \textbf{Imagine Silicon Valley Finalist}. \\
+%                  &  One of ten finalists of more than 500 applicants who sent in a one minute
+%                    video (https://www.youtube.com/watch?v=Om1DGAa7Cgw) to be sponsored for a Silicon Valley trip. \\\\
+%   02/2018  & \textbf{Winner: Imagine Developer Dreamer}. \\
+%                  &  Got selected to participate in the "Imagine-Express-Train". \\\\
+%   09/2018 & \textbf{Best Fintech Pitch} \\
+%                  & Awarded 1st price at Fintech Stage's event ``Fintech War'' of over
+%                    +16 fintech startups plus a 1k€ cash price \\\\
+%   07/2018      & \textbf{Winner Adidas Finals Herzogen-Aurach} \\
+%                  &  Created the ``Adidasum'' ICO for an API data marketplace to
+%                    democratise data and connect data provider, data scientists and
+%                    data consumer.\\\\
+%   05/2018       & \textbf{MetLife Iberia Financial Inclusion Award} \\
+%                  & Awarded a 4K€ cash price at MetLife Iberia to keep
+%                    promoting Financial Inclusion. \\\\
+%   04/2018     & \textbf{Winner Adidas Hackathon Barcelona} \\
+%                  & Created a system that could uniquely identify faces and track
+%                    emotions. We trained a model to predict the probability of a
+%                    client purchasing a certain item in an Adidas store.
+% \end{tabularx}
 		
 
 
@@ -257,14 +399,6 @@
 	% 		2014 & Goethe Universität Frankfurt, Group Seminar Talk: ``Band structure studies of Graphene and modified Graphene structures''
 	% 	\end{tabularx}
 
-	\section*{Languages}
-	\begin{tabularx}{\textwidth}{lX}
-		German: & native \\
-		English: & proficient \\
-		Spanish: & proficient \\
-		French: & proficient \\
-		Hungarian: & basics 
-	\end{tabularx}
 	
 
 %  \section*{References}
@@ -295,3 +429,7 @@
 % LocalWords:  io lX textwidth tabulars sX Adidasum Ph PIF renormalon ph save
 % LocalWords:  für Theoretische Physik von Strasse Fisica d'Altes Plaça Cívica
 % LocalWords:  Cerdanyola LocalWords
+
+% Local Variables:
+% TeX-engine: luatex
+% End:
