@@ -2,11 +2,14 @@
 \usepackage{fontspec}
 % \usepackage[T1]{fontenc}	%special characters
 % \usepackage[utf8]{inputenc}	%special characters
+
 \usepackage{lmodern,textcomp}% Euro Symbol
 \usepackage[a4paper, top=0.5in, right=0.5in, bottom=0.5in, left=0.5in]{geometry} %article layout margins
 \usepackage{hyperref}
+
 \usepackage{tabularx}		%tabulars width fixed textwidth
 \usepackage{multicol}	%2 columns in Skills
+\usepackage{multirow}
 \usepackage{graphicx}
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric,calc}
@@ -49,6 +52,15 @@
 \setmainfont{HK Grotesk}
 \pagenumbering{gobble}
 
+% Project List
+\newcommand{\minitab}[2][l]{\begin{tabular}{#1}#2\end{tabular}}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+% Tags
+\usepackage{tcolorbox}
+\newtcbox{\tagBox}{on line,
+  colback=maincolor,
+  boxrule=0pt,arc=5pt,boxsep=1pt,left=0pt,right=0pt,top=2pt,bottom=2pt}
+\newcommand{\tag}[1]{\footnotesize\tagBox{\color{white}{\phantom{g}#1\phantom{g}}}}
 
 
 \begin{document}
@@ -203,9 +215,73 @@ Created surveillance system to track and identify customer satisfaction.
 \end{small}
 \end{minipage}
 
-\section{Projects}
- hello
- hello2
+\section*{Projects}
+\begin{tabularx}{\linewidth}{p{0.15\linewidth}p{0.15\linewidth}p{0.65\linewidth}}
+  12/19 - presend &
+  \multirow[t]{2}*{\minitab{ \\ \textbf{1++ App} \\ Front-End}} 
+  & Created an Angular Ionic hybrid app connected to   Firebase. Designed NoSQL
+    database architecture. Used RxJS Observables. Used TDD with Jasmine and
+    Karma.\\
+  && \tag{JavaScript} \tag{Angular 8} \tag{Ionic} \tag{RxJS} \tag{Firebase}
+     \tag{Jasmine} \tag{Material Design} \\\\
+
+  10/18 - 02/19 &
+  \multirow[t]{2}*{\minitab{ \\ \textbf{Utility Token} \\ Blockchain}} 
+  & Created an Ethereum ERC-20 compliant utility token for Cuatre Casas. Created
+  a Node-Express REST API connected to an Ethereum Node to manage Token
+    interactions. Used Truffle and Mocha for Unit-testing.\\
+  && \tag{JavasScript} \tag{Node} \tag{Express} \tag{REST} \tag{Mocha} \tag{Ethereum} \tag{Solidity} \tag{Truffle} \\\\
+
+  04/18 - 11/18 &
+  \multirow[t]{2}*{\minitab{ \\ \textbf{Stamper} \\ Full-Stack}} 
+  & Created an React-Redux App with an Prisma-GraphQL backend hosted on AWS
+    ECS. Used AWS Cognito for authentification and AWS S3 for storage.\\
+  && \tag{React} \tag{Redux} \tag{JavaScript} \tag{Prisma} \tag{GraphQL} \tag{AWS-ECS} \tag{AWS-Cognito} \tag{AWS-S3} \\\\
+  
+  04/18 - 02/19 &
+  \multirow[t]{2}*{\minitab{ \\ \textbf{Boardchain} \\ Blockchain}} 
+  & Created an React-Redux App connected to a series of Smart Contracts hosted
+    on the Ethereum Blockchain to remotely
+    hold transparent and immutable board meetings.\\
+  && \tag{React} \tag{Redux} \tag{JavaScript} \tag{Solidity} \tag{Ethereum} \tag{Smart Contract} \tag{Truffle} \\\\
+
+  10/17 - 04/18 &
+  \multirow[t]{2}*{\minitab{ \\ \textbf{Alda Chatbot} \\ Data Science}} 
+  & Created an natural language processor to detect user intents. Connected the
+    Facebook API, Saltedge API and Dialogflow API to create a Chatbot interface
+    able to respond to many financial requests. Hosted serverless microservices
+    as AWS Node and Python Lambdas with a PostgreSQL database as backend. \\
+  && \tag{Data Science} \tag{NLP} \tag{AWS-Lambda} \tag{PostgreSQL} \tag{Python}
+  \tag{JavaScript} \tag{Node} \tag{Serverless} \\\\
+
+  10/17 - 04/18 &
+  \multirow[t]{2}*{\minitab{ \\ \textbf{Alda PWA} \\ Front-End}} 
+  & Created a React PWA for the Chatbot as UI alternative for Facebbook Messenger. \\
+  && \tag{React} \tag{Redux} \tag{AWS-Amplify} \tag{AWS-Dynamodb} \tag{Serverless}
+  \tag{AWS-Cognito} \\\\
+
+  09/16 - 09/17 &
+  \multirow[t]{2}*{\minitab{ \\ \textbf{WeGoLoco App} \\ Full-Stack}} 
+  & Created a native iOS App written in Swift. Used AWS-Cognito for
+    authentification, AWS-RDS (PostgreSQL) as a database and AWS-S3 for storage
+    connected via AWS-Lambda Serverless microservices. \\
+  && \tag{Native App} \tag{Swift} \tag{AWS-Cognito} \tag{AWS-RDS}
+     \tag{AWS-Lambda} \tag{AWS-S3} \tag{PostgreSQL}\\\\
+
+  02/16 - 08/16 &
+  \multirow[t]{2}*{\minitab{ \\ \textbf{FuldaCity App} \\ Front-End}} 
+  & Created a native App written in React Native with a MongoDB backend. \\
+  && \tag{React Native} \tag{JavaScript} \tag{MongoDB}\\\\
+
+  01/16 - 06/15 &
+  \multirow[t]{2}*{\minitab{ \\ \textbf{Tennisspot} \\ Full-Stack}} 
+  & Created a Web app for a local tennisclub, which is still used by > 200
+    Persons. Used LAMP with PHP and MySQL. \\
+  && \tag{PHP} \tag{MySQL} \tag{JQuery} \tag{LAMP}\\\\
+  
+
+\end{tabularx}
+
 
 
 
