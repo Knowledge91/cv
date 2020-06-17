@@ -1,0 +1,108 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}	%special characters
+\usepackage[utf8]{inputenc}	%special characters
+\usepackage{lmodern,textcomp}% Euro Symbol
+
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry} %article layout margins
+\usepackage{tabularx}		%tabulars width fixed textwidth
+\usepackage{multicol}	%2 columns in Skills
+\usepackage{graphicx}
+\usepackage{sectsty}
+\sectionfont{
+	\sectionrule{0pt}{0pt}{-5pt}{0.8pt}
+}
+
+\begin{document}
+
+\Large
+\noindent
+\textbf{Dirk Hornung, Ph.D.} \\
+
+\normalsize
+\noindent
+\begin{minipage}{0.5\linewidth}
+  \begin{tabularx}{0.6\textwidth}{>{\bfseries}l l}
+    City:           & Barcelona \\
+    Date of birth:  & October 5, 1991\\
+    Place of birth: & Fulda, Germany \\
+    Mobile:         & +34 695460404 \\
+    E-mail:         & hello@drdirk.io \\
+    Website:      	& drdirk.io
+  \end{tabularx}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+  \begin{flushright}
+    \includegraphics[width=0.4\textwidth]{dirk.png}
+  \end{flushright}
+\end{minipage}
+
+\section*{}
+\vspace{1cm}
+Warum Ich perfekt in das Gardena Team bei Husqvarna passe. \\
+
+\noindent Ich heiße Dirk Hornung, bin gebürtiger deutscher und lebe seit 5 Jahren in
+Spanien. Ich habe in diesem Jahr meine Promotion in der theoretischen
+Teilchenphysik erfolgreich abgeschlossen und suche nun nach neuen
+Herausforderungen in der Schweiz.
+
+\noindent Seit meinem 14 Lebensjahr verbringe Ich einen Großteil meiner Zeit mit der
+Programmierung von Webapplikationen. Mit jedem Projekt versuche Ich neue
+Technologien zu erlernen. Ich stufe mich als erfahrenen Full-Stack
+Developer mit Kenntnissen in der Blockchain und der Künstlichen
+Intelligenz ein. Mein Schwerpunkt ist das FrontEnd Development, am
+liebsten in Typescript mit React und Mocha.
+
+\noindent Seit Beginn letzten Jahres habe Ich mir, passend zu Ihren Smart Garden
+Robotern, einen Makerspace eingerichtet. Der Makerspace besteht aus einem 3D
+Drucker, einer CNC-Fräse und unzähligen Hardwarekomponenten (China sei
+dank) und wurde von mir verwendet um mir ein Smart Home einzurichten und in die
+Elektrotechnik einzusteigen. 
+
+\noindent Warum möchte Ich für Husqvarna in Zürich arbeiten? Ich habe lange Zeit
+für early stage Startups gejobbed und suche nun ein international anerkanntes
+Unternehmen, wie Husqvarna, um meine Karriere voranzutreiben.  Für Zukunft würde ich gerne mehr Jahre
+Erfahrung im Frontendbereich meinem CV hinzufügen, um best sehr gut bezahlte
+Freelance Jobs im Schweizerraum ausführen zu können.Ich möchte in der
+Frontentwicklung arbeiten, weil Ich dort die meiste Erfarhung mitbringe. Das
+Gardena-Team, Smart Home und IoT hören sich nach einem interessanten Arbeitsfeld
+an, indem es viel zu lernen gibt. 
+
+ 
+
+ 
+ 
+ Dear ZI-Mannheim, \\
+
+ \noindent I am Dirk Hornung, a recently graduated Ph.D. student at the institute
+ of high energy physics of the Autonomous University of Barcelona with 5+ years
+ of experience in leading the technology in different Startups. Within my
+ studies, I researched low-energy QCD and the determination of Standard Model
+ parameters. I developed a parallelized C++ fitting routine to extract parameters of
+ theoretical models out of CERN experimental data. \\
+
+ \noindent Besides my studies, I am an entrepreneur. During the last year, I
+ developed Smart Contracts in the Ethereum Blockchain and connected them through
+ REST APIs using Node Express for a legaltech. Before I developed a chatbot using
+ Artificial Intelligence for a fintech. We connected our clients through
+ Messenger to their bank accounts and analyzed their banking information using
+ Python. I am furthermore a Full-stack developer with lots of experience
+ developing applications using React as frontend and AWS services as a backend.  \\
+
+ \noindent Concerning High-Performance-Computing I have experience in designing
+ virtual private networks in AWS, especially with Docker and Kubernetes. I have
+ a running Hadoop cluster as a playground in lab. I am a advanced Unix user
+ (the shell and emacs are my home). \\
+
+ \noindent Currently I am educating myself on the topic of Artificial Intelligence
+ and Machine Learning, especially in the field of Deep Learning. I recently completed
+ Andrew Ng's Coursera Deep Learning Specialization. Apart from that, I am practising my
+ Tensorflow and Keras skills within python sound wave simulations and active noise cancelling.\\
+
+ \noindent Sincerely, \\
+ Dr. Dirk Hornung \\
+
+ \noindent P.S. I am a native German, but also fluent in English, French and
+ Spanish. Visit drdirk.io to get to know me better.
+
+ \end{document}
