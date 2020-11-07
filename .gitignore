@@ -26,3 +26,10 @@
 *.fdb_latexmk
 _region_.*
 *.tex#
+
+index.log
+resume.tex
+*.pdf
+resume.tuc
+index.md
+__latexindent_temp.tex
