@@ -29,7 +29,6 @@ _region_.*
 
 index.log
 resume.tex
-*.pdf
 resume.tuc
 index.md
 __latexindent_temp.tex
