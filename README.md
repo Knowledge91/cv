@@ -1,3 +1,14 @@
+# Setup
+- Install `fonts/hg-grotesk` (installs into `$HOME/Library/Fonts` on Mac)
+- Execute
+  ```
+  export $HOME/Library/Fonts
+  mtxrun --generate
+  mtxrun --script font --reload
+  # verify installation 
+  mtxrun --script font --list --file -pattern=*grotesk*
+  ```
+
 # Generate CV
 `make resume.pdf` 
 

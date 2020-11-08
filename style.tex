@@ -20,7 +20,7 @@ $endif$
 \definecolor[rulecolor][h=009af3]
 
 % Enable hyperlinks
-\setupinteraction[state=start, color=sectioncolor]
+\setupinteraction[state=start, color=rulecolor]
 
 \setuppapersize [$if(papersize)$$papersize$$else$letter$endif$][$if(papersize)$$papersize$$else$letter$endif$]
 \setuplayout    [width=middle, height=middle,
@@ -30,7 +30,27 @@ $endif$
 
 %\setuppagenumbering[location={footer,center}]
 
-\setupbodyfont[10pt, helvetica]
+\starttypescript [hkgrotesk]
+  \definefontsynonym[HKGrotesk-Regular]    [file:HKGrotesk-Regular]
+  \definefontsynonym[HKGrotesk-Italic]     [file:HKGrotesk-Italic]
+  \definefontsynonym[HKGrotesk-Bold]       [file:HKGrotesk-Bold]
+  \definefontsynonym[HKGrotesk-BoldItalic] [file:HKGrotesk-BoldItalic]
+\stoptypescript
+
+\starttypescript [hkgrotesk]
+  \setups[font:fallback:serif]
+  \definefontsynonym[Serif]                [HKGrotesk-Regular]    [features=default]
+  \definefontsynonym[SerifItalic]          [HKGrotesk-Italic]     [features=default]
+  \definefontsynonym[SerifBold]            [HKGrotesk-Bold]       [features=default]
+  \definefontsynonym[SerifBoldItalic]      [HKGrotesk-BoldItalic] [features=default]
+\stoptypescript
+
+\starttypescript [hkgrotesk]
+  \definetypeface [hkgrotesk]    [rm] [serif] [hgkrotesk]    [default]
+\stoptypescript
+
+\setupbodyfont[hkgrotesk]
+\setupbodyfont[10pt]
 
 \setupwhitespace[quarterline]
 

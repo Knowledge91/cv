@@ -26,7 +26,7 @@ Present Jan 2020
 :   **CTO & Co-Founder**, Server Infrastructure, *[Aplikato](https://aplikato.de)*
 
     - Advising a team of four software developers.
-    - Built server and networking infrastructure. Implemented Kubernetes with dynamic NFS storage provision and Jenkins backup/ deployment automation.
+    - Built server and networking infrastructure. Implemented Kubernetes with dynamic NFS storage provision and Jenkins CI/CD automation.
 
 Mar 2020 Jan 2020
 :   **Data Scientist**, Data Lake Architecture, *Fresenius Medical Care*
