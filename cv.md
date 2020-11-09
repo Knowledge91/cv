@@ -10,12 +10,11 @@ author: Dirk Hornung
 
 ### About me
 
-I am Software Engineer by passion.
-
+I am Software Engineer by passion. During my 5+ of years of experience as a  professional developer I implemented a C++ fitting routine extracting model parameters from CERN data and a NLP chatbot using Python and Tensorflow. I can beat songs on Expert+ on Oculus BeatSaber.
 
 ### Professional Experience
 
-Present Apr 2020
+Present Mar 2020
 :   **Software Engineer**, Counter Abuse Technologies, *[Google](https://myaccount.google.com) Contractor*
 
     - Implemented WebRTC video streaming frontend and FaceMesh Tensorflow model. 
@@ -33,7 +32,7 @@ Mar 2020 Jan 2020
 
     - Architectured the storage, query and aplication layer of a Data Lake using Kubernetes, MinIO, Parquet, Presto and Ranger (see: [Data Lake Architecture at Fresenius Medical Care](https://drdirk.medium.com/data-lake-architecture-at-fresenius-medical-care-f826536f09fe)).
 
-Feb 2020 Feb 2019
+Apr 2019 Mai 2018
 :   **CTO**, Ethereum Blockchain, *[CYSAE](https://cysae.com) (Startup)*
 
     - Led a two people developer team.
@@ -49,17 +48,19 @@ Apr 2018  Oct 2017
 ### Education
 
 Jul 2019 Oct 2015
-:   **Ph.D., Theoretical Physics**, *UAB (Spain) / AMU (France), A grade*
+:   **Ph.D., Theoretical Physics**, *Universitat Autònoma de Barcelona/Aix-Marseille Université*, A grade
 
     The QCD Strong Coupling from Hadronic Tau Decays.
 
+    - Implemented a parallized and unit tested C++ fitting routine to extract model parameters using data provided by CERN. 
+
 Sep 2015 Oct 2014 
-:   **M.Sc., Particle Physics**, *UAB (Spain)*
+:   **M.Sc., Particle Physics**, *Universitat Autònoma de Barcelona*
 
     1-Loop Anomalous Dimensions of 4-Quark Operations.
 
 Sep 2014 Oct 2011
-:   **B.Sc., Condensed Matter Physics**, *GU (Germany)*
+:   **B.Sc., Condensed Matter Physics**, *Goethe University*
 
     Band Structure Studies of Graphene
 
