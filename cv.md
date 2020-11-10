@@ -22,7 +22,7 @@ Present Mar 2020
     - Ensured quality with unit and integration tests applying TDD.
 
 Present Jan 2020
-:   **CTO & Co-Founder**, Server Infrastructure, *[Aplikato](https://aplikato.de)*
+:   **CTO & Co-Founder**, Server Infrastructure, *[Aplikato](https://aplikato.de)* (Startup)
 
     - Advising a team of four software developers.
     - Built server and networking infrastructure. Implemented Kubernetes with dynamic NFS storage provision and Jenkins CI/CD automation.
