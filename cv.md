@@ -10,12 +10,12 @@ author: Dirk Hornung
 
 ### About me
 
-I am Software Engineer by passion. During my 5+ of years of experience as a  professional developer I implemented a C++ fitting routine extracting model parameters from CERN data and a NLP chatbot using Python and Tensorflow. I can beat songs on Expert+ on Oculus BeatSaber.
+I am Software Engineer by passion. During my 5+ of years of experience as a professional web developer I led the technological infrastructure of three Startups and implemented a NLP chatbot using Python and Tensorflow. I have the ambition to grow into a full-time position at one of the FAANG companies.
 
 ### Professional Experience
 
 Present Mar 2020
-:   **Software Engineer**, Counter Abuse Technologies, *[Google](https://myaccount.google.com) Contractor*
+:   **Software Engineer**, Counter Abuse Technologies, *RMIT Group Supporting Google*
 
     - Implemented WebRTC video streaming frontend and FaceMesh Tensorflow model. 
     - Implemented accessibility features.
@@ -86,4 +86,4 @@ Software
 - Winner: Imagine Developer Dreamer
 - Best Fintech Pitch at "Fintech War" (1000 EUR)
 - MetLife Iberia Financial Inclusion Award (4000 EUR)
-- Winner Adidas Hackathon Barcelona (1000 EUR)
+- Winner Adidas Hackathon Barcelona (6000 EUR)
