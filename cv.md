@@ -10,7 +10,7 @@ author: Dirk Hornung
 
 ### About me
 
-I am Software Engineer by passion. During my 5+ of years of experience as a professional web developer I led the technological infrastructure of three Startups and implemented a NLP chatbot using Python and Tensorflow. I have the ambition to grow into a full-time position at one of the FAANG companies.
+I am Software Engineer by passion. During my 5+ years of experience as a professional web developer I led the technological infrastructure of three Startups using React as their front end. During my recent year at Google I architectured propals and was a key player in the communication between the engineering and the design team.
 
 ### Professional Experience
 
