@@ -10,12 +10,12 @@ author: Dirk Hornung
 
 ### About me
 
-I am Software Engineer by passion. During my 5+ years of experience as a professional developer I implemented a C++ fitting routine extracting model parameters from CERN data and a NLP chatbot using Python and Tensorflow. I have the ambition to work at one of the big tech companies in San Francisco like Uber.
+I am Software Engineer by passion. During my 5+ years of experience as a professional web developer I led the technological infrastructure of three Startups using React as their front end. During my recent year at Google I architectured propals and was a key player in the communication between the engineering and thedesign team.
 
 ### Professional Experience
 
 Present Mar 2020
-:   **Software Engineer**, Counter Abuse Technologies, *RMIT Group Supporting Google*
+:   **Contract Software Engineer**, Counter Abuse Technologies, *Google*
 
     - Implemented WebRTC video streaming frontend and FaceMesh Tensorflow model. 
     - Implemented accessibility features.
