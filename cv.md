@@ -10,7 +10,7 @@ author: Dirk Hornung
 
 ### About me
 
-I am Software Engineer by passion. During my 5+ years of experience as a professional web developer I led the technological infrastructure of three Startups using React as their front end. During my recent year at Google I architectured propals and was a key player in the communication between the engineering and thedesign team.
+I am Software Engineer by passion. During my 5+ years of experience as a professional developer I led the technological infrastructure of three Startups. I spend my free time in a personal lab prototyping with a 3D printer, a CNC Milling machine and lots of electronic parts.
 
 ### Professional Experience
 
@@ -30,7 +30,7 @@ Present Jan 2020
 Mar 2020 Jan 2020
 :   **Data Scientist**, Data Lake Architecture, *Fresenius Medical Care*
 
-    - Architectured the storage, query and aplication layer of a Data Lake using Kubernetes, MinIO, Parquet, Presto and Ranger (see: [Data Lake Architecture at Fresenius Medical Care](https://drdirk.medium.com/data-lake-architecture-at-fresenius-medical-care-f826536f09fe)).
+    - Architectured the storage, query, and application layer of a Data Lake using Kubernetes, MinIO, Parquet, Presto and Ranger (see: [Data Lake Architecture at Fresenius Medical Care](https://drdirk.medium.com/data-lake-architecture-at-fresenius-medical-care-f826536f09fe)).
 
 Apr 2019 Mai 2018
 :   **CTO**, Ethereum Blockchain, *[CYSAE](https://cysae.com) (Startup)*
@@ -73,11 +73,11 @@ Languages
 Style
 :   TDD, OOP, dependency injection, pair programming, CI/CD
 
-Stacks
-:   Node.js, Express, React, Vue, Flask, Jest, AWS
-
 Software
-:   Git, Docker, Kubernetes, PostgreSQL, NFS, Jenkins
+:   Fusion360, Git, Docker, Kubernetes, PostgreSQL, NFS, Jenkins
+
+Prototyping
+: 3D Printing, CNC, Circuit Design, Esp32, Arduino
 
 
 ### Awards
