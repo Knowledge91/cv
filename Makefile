@@ -12,6 +12,11 @@ resume.pdf: index.md style.tex
 	pandoc --standalone --template style.tex -V papersize=A4 --from markdown --to context -o resume.tex index.md
 	context resume.tex
 
+application: index.md style.tex
+	pandoc --standalone --template style.tex -V papersize=A4 --from markdown --to context -o resume.tex index.md
+	context resume.tex
+	./storeapplication.sh
+
 index.docx: index.md
 	pandoc --from markdown --to docx -o index.docx index.md
 
