@@ -9,7 +9,7 @@ author: Dirk Hornung
 
 
 ### About me
-I am a Software Engineer by passion. During my 5+ years of experience as a professional developer, I led the technological infrastructure of three Startups. I manage a baremetal Kubernetes cluster in my personal lab. I have the ambition to become a full-time software engineer at a FAANG company.
+I am Software Engineer by passion. During my 5+ years of experience as a professional developer I led the technological infrastructure of three Startups. During my recent year at Google, I was a key player in implementing a YouTube feature. I am in love with DevOps tools like Github and have the ambition to become a full-time employer in one of the big tech companies.
 
 ### Professional Experience
 
