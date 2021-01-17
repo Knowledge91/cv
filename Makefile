@@ -8,7 +8,7 @@ index.md: cv.md
 index.html: cv.md style.css
 	pandoc --standalone -c style.css --from markdown --to html -o index.html cv.md
 
-resume.pdf: index.md style.tex
+cv: index.md style.tex
 	pandoc --standalone --template style.tex -V papersize=A4 --from markdown --to context -o resume.tex index.md
 	context resume.tex
 
